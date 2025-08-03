@@ -1,7 +1,8 @@
 "use client";
 
-import { useRef, useEffect } from "react";
 import mapboxgl from "mapbox-gl";
+import { useEffect, useRef } from "react";
+import type { Pin } from "~/types/pin";
 
 const mapboxToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 if (!mapboxToken) {
@@ -9,7 +10,11 @@ if (!mapboxToken) {
 }
 mapboxgl.accessToken = mapboxToken;
 
-const MapViewer = () => {
+interface MapViewerProps {
+	pins: Pin[];
+}
+
+const MapViewer = ({ pins }: MapViewerProps) => {
 	const mapContainerRef = useRef<HTMLDivElement>(null);
 	const mapRef = useRef<mapboxgl.Map | null>(null);
 
