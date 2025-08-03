@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { supabase } from "~/libs/supabaseClient";
+import { supabase } from "~/lib/supabaseClient";
 
 export default function SignInPage() {
 	const router = useRouter();

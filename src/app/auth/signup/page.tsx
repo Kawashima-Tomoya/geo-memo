@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { supabase } from "~/libs/supabaseClient";
+import { supabase } from "~/lib/supabaseClient";
 
 type FormErrors = {
 	email?: string;

@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import MapViewer from "~/components/MapViewer";
 import { usePins } from "~/hooks/usePins";
-import { supabase } from "~/libs/supabaseClient";
+import { supabase } from "~/lib/supabaseClient";
 import type { Pin } from "~/types/pin";
 
 export default function MapPage() {

@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { supabase } from "~/libs/supabaseClient";
+import { supabase } from "~/lib/supabaseClient";
 import type { Pin } from "~/types/pin";
 
 export const usePins = () => {
