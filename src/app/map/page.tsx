@@ -27,7 +27,7 @@ export default function MapPage() {
 
 	return (
 		<div className="w-full h-screen">
-			<MapViewer pins={pins} />
+			<MapViewer />
 		</div>
 	);
 }

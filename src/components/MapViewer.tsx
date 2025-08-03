@@ -14,7 +14,7 @@ interface MapViewerProps {
 	pins: Pin[];
 }
 
-const MapViewer = ({ pins }: MapViewerProps) => {
+const MapViewer = () => {
 	const mapContainerRef = useRef<HTMLDivElement>(null);
 	const mapRef = useRef<mapboxgl.Map | null>(null);
 
