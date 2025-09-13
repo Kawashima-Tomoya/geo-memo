@@ -1,9 +1,9 @@
-import MapViewer from "~/components/MapViewer";
+import MapView from "~/components/MapView";
 
 export default function Home() {
 	return (
 		<main>
-			<MapViewer />
+			<MapView />
 		</main>
 	);
 }
