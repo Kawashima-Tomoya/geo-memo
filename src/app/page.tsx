@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Button } from "~/components/ui/Button";
 
 export default function HomePage() {
 	return (
@@ -12,25 +11,24 @@ export default function HomePage() {
 						<br />
 						あなたの思い出や発見を位置情報と一緒に記録できます。
 					</p>
-					<Link href="/map">
-						<Button variant="default" size="lg">
+					<div className="space-x-4">
+						<Link
+							href="/map"
+							className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+						>
 							アプリを開く
-						</Button>
-					</Link>
-					<div className="space-x-4 mt-6">
-						<Link href="/signin">
-							<Button variant="outline" size="lg" className="">
-								ログイン
-							</Button>
 						</Link>
-						<Link href="/signup">
-							<Button
-								variant="outline"
-								size="lg"
-								className="bg-gray-50 hover:bg-white"
-							>
-								アカウント作成
-							</Button>
+						<Link
+							href="/signin"
+							className="inline-block bg-white hover:bg-gray-50 text-gray-900 px-8 py-3 rounded-lg font-semibold border border-gray-300 transition-colors"
+						>
+							ログイン
+						</Link>
+						<Link
+							href="/signup"
+							className="inline-block bg-gray-800  hover:bg-gray-700 text-gray-100  px-8 py-3 rounded-lg font-semibold transition-colors"
+						>
+							アカウント作成
 						</Link>
 					</div>
 				</div>

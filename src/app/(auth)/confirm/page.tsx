@@ -1,7 +1,7 @@
 "use client";
-import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { supabase } from "~/lib/supabaseClient";
+import { useEffect } from "react";
+import { supabase } from "~/lib/supabase/client";
 
 export default function ConfirmPage() {
 	const router = useRouter();
