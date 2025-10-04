@@ -1,6 +1,7 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import type { FormEvent } from "react";
+import { useState } from "react";
 
 interface PinFormProps {
 	onSubmit: (title: string, description: string) => void;
@@ -21,32 +22,38 @@ export default function PinForm({ onSubmit, onCancel }: PinFormProps) {
 	};
 
 	return (
-		<div className="bg-white rounded-lg shadow-xl p-4 w-80">
+		<div className="z-4 absolute top-4 right-4 bg-white/80 rounded-lg shadow-lg p-4 w-80">
 			<h3 className="font-semibold text-gray-900 mb-3">新しいピンを作成</h3>
-			<form onSubmit={handleSubmit} className="space-y-3">
+			<form
+				onSubmit={handleSubmit}
+				className="space-y-3 text-gray-900 antialiased"
+			>
 				<div>
-					<label className="block text-sm font-medium text-gray-700 mb-1">
+					<label htmlFor="pin-title" className="block text-sm font-medium mb-1">
 						タイトル
 					</label>
 					<input
+						id="pin-title"
 						type="text"
 						value={title}
 						onChange={(e) => setTitle(e.target.value)}
 						className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-						placeholder="例：美味しいラーメン屋"
 						required
 					/>
 				</div>
 
 				<div>
-					<label className="block text-sm font-medium text-gray-700 mb-1">
+					<label
+						htmlFor="pin-description"
+						className="block text-sm font-medium text-gray-700 mb-1"
+					>
 						説明（任意）
 					</label>
 					<textarea
+						id="pin-description"
 						value={description}
 						onChange={(e) => setDescription(e.target.value)}
 						className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-						placeholder="詳細な情報を入力..."
 						rows={3}
 					/>
 				</div>

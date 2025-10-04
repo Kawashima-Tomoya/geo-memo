@@ -1,13 +1,6 @@
+// hooks/usePins.ts
 import { useCallback, useState } from "react";
-
-export interface Pin {
-	id: string;
-	title: string;
-	description: string;
-	lng: number;
-	lat: number;
-	createdAt: Date;
-}
+import type { Pin, PinCategory } from "~/types";
 
 export function usePins() {
 	const [pins, setPins] = useState<Pin[]>([]);
@@ -23,7 +16,11 @@ export function usePins() {
 	}, []);
 
 	const addPin = useCallback(
-		(title: string, description: string) => {
+		(
+			title: string,
+			description: string,
+			category: PinCategory = "other", // デフォルトは「その他」
+		) => {
 			if (!selectedLocation) return;
 
 			const newPin: Pin = {
@@ -32,6 +29,7 @@ export function usePins() {
 				description,
 				lng: selectedLocation.lng,
 				lat: selectedLocation.lat,
+				category, // カテゴリを追加
 				createdAt: new Date(),
 			};
 

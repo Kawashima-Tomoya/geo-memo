@@ -1,16 +1,12 @@
-// src/types/index.ts
 export interface Pin {
 	id: string;
-	user_id: string;
 	title: string;
-	description: string | null;
-	latitude: number;
-	longitude: number;
-	category: string;
-	color: string;
-	is_favorite: boolean;
-	created_at: string;
-	updated_at: string;
+	description: string;
+	lng: number;
+	lat: number;
+	category: PinCategory;
+	createdAt: Date;
+	userId?: string;
 }
 
 export interface User {
@@ -31,3 +27,29 @@ export interface PinFormData {
 	category: string;
 	color: string;
 }
+
+export type PinCategory = "restaurant" | "sightseeing" | "shopping" | "other";
+
+// カテゴリの設定
+export const PIN_CATEGORIES = {
+	restaurant: {
+		label: "食事",
+		color: "#EF4444", // 赤
+		icon: "🍴",
+	},
+	sightseeing: {
+		label: "観光",
+		color: "#3B82F6", // 青
+		icon: "📸",
+	},
+	shopping: {
+		label: "買い物",
+		color: "#F59E0B", // オレンジ
+		icon: "🛍️",
+	},
+	other: {
+		label: "その他",
+		color: "#6B7280", // グレー
+		icon: "📍",
+	},
+} as const;
