@@ -1,4 +1,3 @@
-// hooks/usePins.ts
 import { useCallback, useState } from "react";
 import type { Pin, PinCategory } from "~/types";
 
@@ -16,11 +15,7 @@ export function usePins() {
 	}, []);
 
 	const addPin = useCallback(
-		(
-			title: string,
-			description: string,
-			category: PinCategory = "other", // デフォルトは「その他」
-		) => {
+		(title: string, description: string, category: PinCategory = "other") => {
 			if (!selectedLocation) return;
 
 			const newPin: Pin = {
@@ -29,7 +24,7 @@ export function usePins() {
 				description,
 				lng: selectedLocation.lng,
 				lat: selectedLocation.lat,
-				category, // カテゴリを追加
+				category,
 				createdAt: new Date(),
 			};
 

@@ -22,7 +22,7 @@ export default function PinForm({ onSubmit, onCancel }: PinFormProps) {
 	};
 
 	return (
-		<div className="z-4 absolute top-4 right-4 bg-white/80 rounded-lg shadow-lg p-4 w-80">
+		<div className="z-4 absolute top-4 right-4  rounded-lg p-4 w-80  bg-white/2.5 border-white/50 backdrop-blur-sm shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)]  antialiased">
 			<h3 className="font-semibold text-gray-900 mb-3">新しいピンを作成</h3>
 			<form
 				onSubmit={handleSubmit}
@@ -37,7 +37,7 @@ export default function PinForm({ onSubmit, onCancel }: PinFormProps) {
 						type="text"
 						value={title}
 						onChange={(e) => setTitle(e.target.value)}
-						className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+						className="w-full px-3 py-2 border bg-white/50 border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
 						required
 					/>
 				</div>
@@ -53,7 +53,7 @@ export default function PinForm({ onSubmit, onCancel }: PinFormProps) {
 						id="pin-description"
 						value={description}
 						onChange={(e) => setDescription(e.target.value)}
-						className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+						className="w-full px-3 py-2 border bg-white/50 border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
 						rows={3}
 					/>
 				</div>
@@ -68,7 +68,7 @@ export default function PinForm({ onSubmit, onCancel }: PinFormProps) {
 					<button
 						type="button"
 						onClick={onCancel}
-						className="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-700 py-2 rounded-md font-medium transition-colors"
+						className="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-700 py-2 rounded-md font-medium transition-colors"
 					>
 						キャンセル
 					</button>

@@ -1,4 +1,3 @@
-// components/map/MapWithPins.tsx - 差分更新版
 "use client";
 
 import { useEffect, useRef } from "react";

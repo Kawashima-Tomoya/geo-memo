@@ -9,7 +9,7 @@ interface PinListProps {
 export default function PinList({ pins, onDeletePin }: PinListProps) {
 	if (pins.length === 0) {
 		return (
-			<p className="text-gray-500 text-sm">
+			<p className="text-sm">
 				まだピンがありません。
 				<br />
 				地図をクリックして最初のピンを作成しましょう！
