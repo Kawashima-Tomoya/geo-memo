@@ -1,10 +1,10 @@
 // app/map/page.tsx
 "use client";
 
-import { usePins } from "~/hooks/usePins";
 import Sidebar from "~/components/layout/Sidebar";
 import MapWithPins from "~/components/map/MapWithPins";
 import PinForm from "~/components/pin/PinForm";
+import { usePins } from "~/hooks/usePins";
 
 export default function MapPage() {
 	const {
